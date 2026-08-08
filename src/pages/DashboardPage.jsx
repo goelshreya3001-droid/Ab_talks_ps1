@@ -200,7 +200,7 @@ export function DashboardPage({
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-4 max-w-[390px] mx-auto space-y-4">
+    <div className="min-h-screen bg-slate-50 px-4 py-4 max-w-97.5 mx-auto space-y-4">
 
       {/* =====================================================
           HEADER
