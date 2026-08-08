@@ -12,17 +12,16 @@ import {
   ShieldAlert,
   Sparkles,
   Trophy,
-  User
+  User,
 } from 'lucide-react';
 
 export function DashboardPage({
   student,
   task,
-  achievements
+  achievements,
 }) {
   // =========================================================
   // DEFAULT STUDENT DATA
-  // Handles empty profile + first day + missed day
   // =========================================================
 
   const defaultStudent = {
@@ -42,12 +41,31 @@ export function DashboardPage({
     githubConnected: false,
     linkedinConnected: false,
 
-    streakFreezes: 1
+    streakFreezes: 1,
   };
+
+  // =========================================================
+  // LOAD SAVED PROFILE
+  // =========================================================
+
+  let savedProfile = {};
+
+  try {
+    savedProfile = JSON.parse(
+      localStorage.getItem('abtalksProfile') || '{}'
+    );
+  } catch (error) {
+    savedProfile = {};
+  }
+
+  // =========================================================
+  // CURRENT STUDENT
+  // =========================================================
 
   const currentStudent = {
     ...defaultStudent,
-    ...(student || {})
+    ...savedProfile,
+    ...(student || {}),
   };
 
   // =========================================================
@@ -60,17 +78,25 @@ export function DashboardPage({
 
   const [streakRestored, setStreakRestored] = useState(false);
 
+  const [showProfileForm, setShowProfileForm] = useState(false);
+
+  const [profileName, setProfileName] = useState(
+    currentStudent.name || ''
+  );
+
+  const [profileCollege, setProfileCollege] = useState(
+    currentStudent.college || ''
+  );
+
   // =========================================================
   // TASK DATA
   // =========================================================
 
   const currentTask = task || {
     day: currentStudent.currentDay || 1,
-
     title: 'Set Up Your Development Environment',
-
     description:
-      'Create your first Git repository, add a README.md, and make your first commit.'
+      'Create your first Git repository, add a README.md, and make your first commit.',
   };
 
   // =========================================================
@@ -84,7 +110,7 @@ export function DashboardPage({
   // =========================================================
 
   const hasProfile =
-    Boolean(currentStudent.name) ||
+    Boolean(currentStudent.name) &&
     Boolean(currentStudent.college);
 
   const displayName =
@@ -97,7 +123,8 @@ export function DashboardPage({
   // STREAK
   // =========================================================
 
-  const streakCount = currentStudent.streakCount || 0;
+  const streakCount =
+    currentStudent.streakCount || 0;
 
   // =========================================================
   // PROGRESS
@@ -109,10 +136,15 @@ export function DashboardPage({
   const totalDays =
     currentStudent.totalDays || 60;
 
-  const progressPercentage = Math.min(
-    100,
-    Math.round((completedDays / totalDays) * 100)
-  );
+  const progressPercentage =
+    totalDays > 0
+      ? Math.min(
+          100,
+          Math.round(
+            (completedDays / totalDays) * 100
+          )
+        )
+      : 0;
 
   // =========================================================
   // TODAY COMPLETE
@@ -127,13 +159,48 @@ export function DashboardPage({
 
   const handleUseFreeze = () => {
     if (streakFreezes > 0) {
-      setStreakFreezes((previous) => previous - 1);
+      setStreakFreezes(
+        (previous) => previous - 1
+      );
+
       setStreakRestored(true);
     }
   };
 
+  // =========================================================
+  // SAVE PROFILE
+  // =========================================================
+
+  const handleSaveProfile = () => {
+    if (
+      !profileName.trim() ||
+      !profileCollege.trim()
+    ) {
+      alert(
+        'Please enter both your name and college.'
+      );
+      return;
+    }
+
+    const profileData = {
+      name: profileName.trim(),
+      college: profileCollege.trim(),
+    };
+
+    localStorage.setItem(
+      'abtalksProfile',
+      JSON.stringify(profileData)
+    );
+
+    setShowProfileForm(false);
+
+    // Refresh so dashboard immediately
+    // reads the saved profile.
+    window.location.reload();
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-4 max-w-97.5 mx-auto space-y-4">
+    <div className="min-h-screen bg-slate-50 px-4 py-4 max-w-[390px] mx-auto space-y-4">
 
       {/* =====================================================
           HEADER
@@ -144,6 +211,7 @@ export function DashboardPage({
         <div className="flex items-center justify-between">
 
           {/* Profile */}
+
           <div className="flex items-center gap-3">
 
             {currentStudent.avatar ? (
@@ -154,17 +222,22 @@ export function DashboardPage({
               />
             ) : (
               <div className="w-11 h-11 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center border-2 border-emerald-200">
+
                 {hasProfile ? (
                   <span className="font-extrabold">
-                    {displayName.charAt(0).toUpperCase()}
+                    {displayName
+                      .charAt(0)
+                      .toUpperCase()}
                   </span>
                 ) : (
                   <User className="w-5 h-5" />
                 )}
+
               </div>
             )}
 
             <div>
+
               <h1 className="text-sm font-extrabold text-slate-900">
                 {hasProfile
                   ? `Good evening, ${displayName} 👋`
@@ -174,11 +247,13 @@ export function DashboardPage({
               <p className="text-[11px] text-slate-500 mt-0.5">
                 {displayCollege}
               </p>
+
             </div>
 
           </div>
 
           {/* Day Badge */}
+
           <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1.5 rounded-full border border-emerald-200 whitespace-nowrap">
             Day {currentStudent.currentDay}/60
           </span>
@@ -186,14 +261,19 @@ export function DashboardPage({
         </div>
 
         {/* ABTalks Explanation */}
+
         <div className="mt-3 pt-3 border-t border-slate-100">
 
           <p className="text-[11px] text-slate-500 leading-relaxed">
+
             <span className="font-bold text-slate-700">
               ABTalks 60-Day Challenge
             </span>{' '}
-            helps you build coding skills by completing one practical
-            task every day and sharing your proof of work.
+
+            helps you build coding skills by completing
+            one practical task every day and sharing
+            your proof of work.
+
           </p>
 
         </div>
@@ -204,7 +284,7 @@ export function DashboardPage({
           EMPTY PROFILE
       ====================================================== */}
 
-      {!hasProfile && (
+      {!hasProfile && !showProfileForm && (
         <div className="bg-white border border-slate-200 rounded-2xl p-4">
 
           <div className="flex items-start gap-3">
@@ -220,18 +300,111 @@ export function DashboardPage({
               </h2>
 
               <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
-                Add your name and college to personalize your
-                ABTalks challenge experience.
+                Add your name and college to personalize
+                your ABTalks challenge experience.
               </p>
 
               <button
                 type="button"
-                className="mt-3 bg-slate-900 text-white px-3 py-2 rounded-lg text-[11px] font-bold"
+                onClick={() =>
+                  setShowProfileForm(true)
+                }
+                className="mt-3 bg-slate-900 hover:bg-slate-800 text-white px-3 py-2 rounded-lg text-[11px] font-bold"
               >
                 Complete Profile
               </button>
 
             </div>
+
+          </div>
+
+        </div>
+      )}
+
+      {/* =====================================================
+          PROFILE FORM
+      ====================================================== */}
+
+      {showProfileForm && (
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+
+          <div className="flex items-center justify-between mb-4">
+
+            <div>
+
+              <h2 className="text-sm font-extrabold text-slate-900">
+                Complete Your Profile
+              </h2>
+
+              <p className="text-[10px] text-slate-500 mt-1">
+                This helps personalize your challenge.
+              </p>
+
+            </div>
+
+            <button
+              type="button"
+              onClick={() =>
+                setShowProfileForm(false)
+              }
+              className="text-slate-400 hover:text-slate-700 text-xl"
+            >
+              ×
+            </button>
+
+          </div>
+
+          <div className="space-y-3">
+
+            {/* Name */}
+
+            <div>
+
+              <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                Your Name
+              </label>
+
+              <input
+                type="text"
+                placeholder="Enter your name"
+                value={profileName}
+                onChange={(e) =>
+                  setProfileName(e.target.value)
+                }
+                className="w-full p-3 rounded-xl border border-slate-200 text-xs outline-none focus:border-emerald-500"
+              />
+
+            </div>
+
+            {/* College */}
+
+            <div>
+
+              <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                College
+              </label>
+
+              <input
+                type="text"
+                placeholder="Enter your college"
+                value={profileCollege}
+                onChange={(e) =>
+                  setProfileCollege(e.target.value)
+                }
+                className="w-full p-3 rounded-xl border border-slate-200 text-xs outline-none focus:border-emerald-500"
+              />
+
+            </div>
+
+            {/* Save */}
+
+            <button
+              type="button"
+              onClick={handleSaveProfile}
+              className="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl text-xs"
+            >
+              Save Profile
+            </button>
 
           </div>
 
@@ -260,8 +433,9 @@ export function DashboardPage({
               </h2>
 
               <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">
-                Working late after college? Finish your GitHub
-                proof first, then submit your LinkedIn proof.
+                Working late after college? Finish your
+                GitHub proof first, then submit your
+                LinkedIn proof.
               </p>
 
             </div>
@@ -293,8 +467,8 @@ export function DashboardPage({
                 </h2>
 
                 <p className="text-[11px] text-amber-800 mt-1 leading-relaxed">
-                  Don't worry. One missed day doesn't mean your
-                  challenge is over.
+                  Don't worry. One missed day doesn't
+                  mean your challenge is over.
                 </p>
 
               </div>
@@ -359,8 +533,6 @@ export function DashboardPage({
 
         {streakCount === 0 ? (
 
-          /* First Day / Zero Streak */
-
           <div className="mt-3">
 
             <h2 className="text-lg font-black text-slate-900">
@@ -368,15 +540,14 @@ export function DashboardPage({
             </h2>
 
             <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
-              Complete today's challenge and submit your proof
-              of work to start your 60-day journey.
+              Complete today's challenge and submit
+              your proof of work to start your
+              60-day journey.
             </p>
 
           </div>
 
         ) : (
-
-          /* Active Streak */
 
           <div className="mt-2 flex items-baseline gap-2">
 
@@ -455,14 +626,12 @@ export function DashboardPage({
 
         </div>
 
-        {/* Progress Bar */}
-
         <div className="w-full h-2 bg-slate-100 rounded-full mt-3 overflow-hidden">
 
           <div
             className="h-full bg-emerald-500 rounded-full transition-all"
             style={{
-              width: `${progressPercentage}%`
+              width: `${progressPercentage}%`,
             }}
           />
 
@@ -584,7 +753,9 @@ export function DashboardPage({
               >
 
                 <div className="p-2 bg-amber-50 rounded-lg">
+
                   <Trophy className="w-4 h-4 text-amber-500" />
+
                 </div>
 
                 <div>
@@ -607,8 +778,6 @@ export function DashboardPage({
 
         ) : (
 
-          /* Empty Achievement State */
-
           <div className="bg-white p-4 rounded-2xl border border-slate-200 text-center">
 
             <Trophy className="w-5 h-5 text-slate-300 mx-auto" />
@@ -628,6 +797,7 @@ export function DashboardPage({
       </div>
 
       {/* Bottom spacing */}
+
       <div className="h-4" />
 
     </div>
