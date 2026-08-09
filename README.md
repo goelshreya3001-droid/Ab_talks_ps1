@@ -1,65 +1,54 @@
-# 🚀 ABTalks — AI Learning & Progress OS
-
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Learning%20Platform-6366F1?style=for-the-badge&logo=openai&logoColor=white" alt="AI Learning">
-  <img src="https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/Vite-Fast-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind">
-  <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
 </p>
 
 <p align="center">
-  <strong>Learn. Build. Prove. Progress.</strong>
+  <strong>Build code daily. Get noticed by top recruiters.</strong>
 </p>
 
 <p align="center">
-  A modern, proof-driven learning platform designed to turn an AI engineering curriculum into a measurable and engaging learning journey.
+  ABTalks is a mobile-first React web experience for a structured 60-day coding challenge,
+  combining daily coding missions, progress tracking, streaks, achievements, and proof-of-work submission.
 </p>
 
 <p align="center">
-
-🌐 **[Live Demo](https://ab-talks-ps1.vercel.app/)**
-
+  <a href="https://ab-talks-ps1.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀%20LIVE%20DEMO-ABTalks-10B981?style=for-the-badge" alt="Live Demo" />
+  </a>
+  <a href="https://github.com/goelshreya3001-droid/Ab_talks_ps1">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository" />
+  </a>
 </p>
 
----
+🧠 What is ABTalks?
 
-## 🧠 What is ABTalks?
+ABTalks is a 60-day coding challenge platform concept built to encourage consistent, practical development.
 
-**ABTalks** is a gamified AI-learning platform built around a structured **31-day AI Engineering journey**.
+The experience is centered around:
 
-Instead of simply consuming educational content, learners follow a complete loop:
+Choose a challenge → Complete the daily mission → Submit proof → Track progress → Maintain your streak
 
-> **Learn → Practice → Build → Submit Proof → Track Progress → Repeat**
+The current frontend provides a landing page, personalized dashboard, daily challenge page, profile setup, progress tracking, streak protection, achievements, learning resources, and GitHub/LinkedIn proof submission.
 
-The platform combines **learning management, progress tracking, streaks, milestones, and proof-of-work verification** into one unified experience.
-
----
-
-# ✨ Core Features
+✨ Features
 
 <table>
 <tr>
 <td width="50%">
 
-### 📊 Smart Dashboard
+📅 60-Day Challenge
 
-A centralized dashboard for:
-
-* Learning progress
-* Completed tasks
-* Pending activities
-* Current streak
-* Milestones
-* Overall completion
+A structured 60-day coding journey with a current-day indicator and overall completion progress.
 
 </td>
-
 <td width="50%">
 
-### 📚 Structured Learning
+🎯 Daily Mission
 
-A day-by-day learning journey that guides users through the complete AI engineering roadmap.
+The dashboard highlights the current coding mission and provides a direct route to its challenge page.
 
 </td>
 </tr>
@@ -67,35 +56,16 @@ A day-by-day learning journey that guides users through the complete AI engineer
 <tr>
 <td width="50%">
 
-### 🔥 Streak System
+🔥 Learning Streak
 
-Encourages consistency by tracking consecutive learning activity.
-
-</td>
-
-<td width="50%">
-
-### 🏆 Milestones
-
-Visual milestone tracking helps learners understand how far they have progressed.
+Displays the learner's current streak and encourages completing the daily challenge before the deadline.
 
 </td>
-</tr>
-
-<tr>
 <td width="50%">
 
-### 🔗 Proof of Work
+🛡️ Streak Freeze
 
-Learners can submit GitHub/project URLs as evidence of completed work.
-
-</td>
-
-<td width="50%">
-
-### 👤 Learner Profile
-
-A personalized profile for tracking learner identity, progress, and achievements.
+When a previous day is missed, the dashboard provides a streak-freeze interaction to protect the streak.
 
 </td>
 </tr>
@@ -103,520 +73,572 @@ A personalized profile for tracking learner identity, progress, and achievements
 <tr>
 <td width="50%">
 
-### ⚡ Responsive UI
+📈 Progress Tracking
 
-Designed for a clean experience across different screen sizes.
+A progress bar calculates completion percentage from completed days out of the 60-day challenge.
 
 </td>
-
 <td width="50%">
 
-### 🎨 Modern Product Design
+🏆 Achievements
 
-Reusable cards, badges, progress indicators, icons, and interactive components create a modern learning experience.
+The dashboard displays milestone achievements such as streaks, builds, weekly completion, and challenge milestones.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+👤 Profile Setup
+
+Learners can enter their name and college to personalize the dashboard.
+
+</td>
+<td width="50%">
+
+💾 Local Profile Persistence
+
+The entered name and college are stored in browser localStorage and loaded again by the dashboard.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+🔗 Proof of Work
+
+The challenge page accepts GitHub repository/commit and LinkedIn post URLs as daily proof.
+
+</td>
+<td width="50%">
+
+📚 Learning Resources
+
+Challenge resources can be opened directly through external links such as documentation, guides, and repositories.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+☀️ / 🌙 Focus Experience
+
+The dashboard includes a "Night Owl Focus Mode" section with a late-night productivity message.
+
+</td>
+<td width="50%">
+
+📱 Mobile-First UI
+
+The interface uses compact cards, responsive utility classes, and a narrow application layout designed around a mobile-first experience.
 
 </td>
 </tr>
 </table>
 
----
+🔄 Product Workflow
 
-# 🎯 The Problem
+flowchart LR
+    A["👤 Learner"] --> B["🌐 Landing Page"]
+    B --> C["📊 Dashboard"]
+    C --> D["📅 Today's Mission"]
+    D --> E["💻 Challenge Day"]
+    E --> F["📝 Complete Requirements"]
+    F --> G["🔗 Submit GitHub Proof"]
+    G --> H["🔗 Submit LinkedIn Proof"]
+    H --> I["✅ Submission State"]
+    I --> C
 
-Traditional online learning often follows:
+🏗️ Application Architecture
 
-```text
-Watch Course → Take Notes → Move On
-```
+The current implementation is a frontend-only React application with route-based pages and local browser persistence for the profile.
 
-This creates a gap between **learning concepts** and **actually demonstrating them**.
-
-Learners may finish courses without having:
-
-* Built practical projects
-* Maintained consistency
-* Tracked meaningful progress
-* Collected evidence of their work
-
----
-
-# 💡 The ABTalks Solution
-
-ABTalks transforms passive learning into a proof-driven workflow:
-
-```text
-       📚 LEARN
-          ↓
-       🧠 PRACTICE
-          ↓
-       💻 BUILD
-          ↓
-       🔗 PROVE
-          ↓
-       📊 TRACK
-          ↓
-       🏆 ACHIEVE
-```
-
-The platform encourages learners to turn every learning milestone into **practical, verifiable progress**.
-
----
-
-# 🏗️ System Architecture
-
-```mermaid
 flowchart TB
 
     USER["👤 Learner"]
 
-    subgraph APP["🖥️ ABTalks Application"]
-        
-        UI["⚛️ React Frontend"]
+    subgraph REACT["⚛️ React Application"]
+        ROUTER["React Router"]
 
-        subgraph PAGES["📄 Application Pages"]
-            DASH["📊 Dashboard"]
-            JOURNEY["📚 Learning Journey"]
-            TASKS["✅ Tasks"]
-            PROOF["🔗 Proof Submission"]
-            PROFILE["👤 Profile"]
-        end
+        LANDING["🏠 LandingPage"]
+        DASHBOARD["📊 DashboardPage"]
+        DAY["📅 ChallengeDayPage"]
 
-        subgraph COMPONENTS["🧩 Reusable Components"]
-            CARD["Card"]
-            BUTTON["Button"]
-            BADGE["Badge"]
-            PROGRESS["Progress Bar"]
-            STREAK["Streak Card"]
-            PROOFCARD["Proof Card"]
-        end
+        COMPONENTS["🧩 Reusable Components"]
 
-        STATE["⚙️ Application State"]
-
-        STORAGE["💾 Local Persistence"]
+        CARD["Card"]
+        BUTTON["Button"]
+        BADGE["Badge"]
+        PROGRESS["ProgressBar"]
+        PROOF["ProofCard"]
+        TASK["TaskCard"]
+        CHECKLIST["Checklist"]
+        RESOURCE["ResourceCard"]
+        ACHIEVEMENT["AchievementCard"]
+        STREAK["StreakCard"]
+        NAV["Navbar / BottomNav"]
     end
 
+    DATA["📦 mockData.js"]
+    STORAGE["💾 Browser localStorage"]
     DEPLOY["▲ Vercel"]
 
-    USER --> UI
+    USER --> ROUTER
 
-    UI --> PAGES
+    ROUTER --> LANDING
+    ROUTER --> DASHBOARD
+    ROUTER --> DAY
 
-    DASH --> COMPONENTS
-    JOURNEY --> COMPONENTS
-    TASKS --> COMPONENTS
-    PROOF --> COMPONENTS
-    PROFILE --> COMPONENTS
+    LANDING --> DASHBOARD
+    DASHBOARD --> DAY
 
-    UI --> STATE
-    STATE --> STORAGE
+    DASHBOARD --> COMPONENTS
+    DAY --> COMPONENTS
 
-    UI --> DEPLOY
-```
+    DATA --> DASHBOARD
+    DATA --> DAY
 
----
+    DASHBOARD --> STORAGE
 
-# 🔄 Complete User Workflow
+    REACT --> DEPLOY
 
-```mermaid
-flowchart LR
+🗺️ Page & Route Flow
 
-    A["👤 User"] --> B["🌐 Open ABTalks"]
+The application currently exposes three main routes:
 
-    B --> C["📊 Dashboard"]
-
-    C --> D["📚 Learning Journey"]
-
-    D --> E["📅 Select Daily Task"]
-
-    E --> F["📖 Learn"]
-
-    F --> G["🧠 Practice"]
-
-    G --> H["💻 Build"]
-
-    H --> I["🔗 Submit Proof"]
-
-    I --> J{"✅ Valid?"}
-
-    J -->|Yes| K["🎉 Complete Task"]
-
-    J -->|No| L["⚠️ Fix Submission"]
-
-    L --> I
-
-    K --> M["📈 Update Progress"]
-
-    M --> N["🔥 Update Streak"]
-
-    N --> O["🏆 Check Milestone"]
-
-    O --> P["➡️ Next Task"]
-
-    P --> D
-```
-
----
-
-# 🔗 Proof-of-Work Workflow
-
-A major part of ABTalks is converting learning into **verifiable work**.
-
-```mermaid
 flowchart TD
+    ROOT["/"] --> LANDING["🏠 Landing Page"]
 
-    A["💻 Complete Assignment"]
+    LANDING --> DASH["/dashboard"]
+    DASH --> DAY["/day/:dayId"]
 
-    A --> B["🚀 Build / Deploy Project"]
+    DAY --> DASH
 
-    B --> C["🔗 GitHub / Project URL"]
+Route
 
-    C --> D["📋 Submit Proof"]
+Page
 
-    D --> E["🔍 Verification"]
+Purpose
 
-    E --> F{"Proof Valid?"}
+/
 
-    F -->|YES| G["✅ Verified"]
+Landing Page
 
-    F -->|NO| H["❌ Invalid"]
+Introduces the 60-day challenge and starts the experience
 
-    H --> I["🔄 Resubmit"]
+/dashboard
 
-    I --> D
+Dashboard Page
 
-    G --> J["📊 Progress Updated"]
+Shows profile, streak, mission, progress, proof status, and achievements
 
-    J --> K["🔥 Streak Updated"]
+/day/:dayId
 
-    K --> L["🏆 Milestone Checked"]
-```
+Challenge Day Page
 
----
+Shows a daily challenge and accepts GitHub + LinkedIn proof URLs
 
-# 📈 Progress Tracking
+📊 Dashboard Workflow
 
-Every completed task contributes to the learner's overall journey.
-
-```mermaid
 flowchart TD
+    DASH["📊 Dashboard"]
 
-    TASK["✅ Task Completed"]
+    DASH --> PROFILE["👤 Profile"]
+    DASH --> STREAK["🔥 Learning Streak"]
+    DASH --> MISSION["🎯 Today's Mission"]
+    DASH --> PROGRESS["📈 60-Day Progress"]
+    DASH --> PROOF["🔗 Daily Proof Status"]
+    DASH --> ACHIEVEMENTS["🏆 Milestone Achievements"]
 
-    TASK --> COUNT["📊 Completion Count"]
+    PROFILE --> STORAGE["💾 localStorage"]
+    MISSION --> CHALLENGE["📅 Challenge Page"]
 
-    COUNT --> PROGRESS["📈 Progress Calculation"]
+Dashboard includes
 
-    PROGRESS --> BAR["Progress Bar"]
+Personalized greeting
 
-    PROGRESS --> MILESTONE["🏆 Milestone"]
+Name and college
 
-    PROGRESS --> STREAK["🔥 Streak"]
+Current day / 60
 
-    BAR --> DASHBOARD["📊 Dashboard"]
+Profile completion prompt
 
-    MILESTONE --> DASHBOARD
+Profile editing form
 
-    STREAK --> DASHBOARD
-```
+Learning streak
 
----
+Missed-day warning
 
-# 🗺️ 31-Day AI Engineering Journey
+Streak freeze interaction
 
-The platform organizes the learning journey into progressive AI engineering concepts.
+Night Owl Focus Mode
 
-```mermaid
+Today's mission
+
+60-day progress bar
+
+GitHub proof status
+
+LinkedIn proof status
+
+Milestone achievements
+
+👤 Profile Persistence
+
+The profile form currently collects:
+
+Name
+
+College
+
+The values are stored in browser storage.
+
 flowchart LR
+    A["👤 User"] --> B["Complete Profile"]
+    B --> C["Enter Name + College"]
+    C --> D["Save Profile"]
+    D --> E["localStorage"]
+    E --> F["Dashboard Reload"]
+    F --> G["Personalized Profile"]
 
-    A["01–05<br/>🤖 AI Foundations"]
+Current implementation note: profile persistence is client-side through browser localStorage. There is no backend account/database system in the current version.
 
-    B["06–10<br/>✍️ Prompt Engineering"]
+🔥 Streak & Streak Freeze
 
-    C["11–15<br/>🔎 RAG & Embeddings"]
+The dashboard provides two streak-related experiences.
 
-    D["16–20<br/>🗄️ Vector Databases"]
+Active streak
 
-    E["21–24<br/>🧠 Agentic AI"]
+🔥 Current Streak
+       ↓
+Complete today's challenge
+       ↓
+Keep the momentum alive
 
-    F["25–27<br/>🔌 MCP"]
+Missed day
 
-    G["28–29<br/>🚀 AI Deployment"]
+flowchart TD
+    A["Missed Previous Day"] --> B["⚠️ Missed-Day Warning"]
+    B --> C{"Streak Freeze Available?"}
+    C -->|Yes| D["🛡️ Use Streak Freeze"]
+    D --> E["✅ Streak Protected"]
+    C -->|No| F["No Freeze Available"]
 
-    H["30–31<br/>🏭 Production AI"]
+📝 Daily Challenge Workflow
 
-    A --> B --> C --> D --> E --> F --> G --> H
-```
+The challenge page contains:
 
----
+Day number
 
-# 🧩 Learning Philosophy
+Submission deadline
 
-ABTalks is built around three principles:
+Challenge title
 
-### 01 — Learn by Doing
+Challenge description
 
-Every concept should lead toward practical implementation.
+Night Owl Tip
 
-### 02 — Proof Over Promises
+GitHub repository/commit URL field
 
-Completion should be supported by actual evidence of work.
+LinkedIn post URL field
 
-### 03 — Consistency Creates Progress
+Proof submission button
 
-Streaks, milestones, and progress indicators encourage learners to maintain momentum.
+Completed state
 
----
+flowchart TD
+    A["📅 Open Challenge"] --> B["📖 Read Mission"]
+    B --> C["💻 Complete Coding Work"]
+    C --> D["🔗 Enter GitHub URL"]
+    D --> E["🔗 Enter LinkedIn URL"]
+    E --> F["Submit Proof"]
+    F --> G{"Both URLs Provided?"}
+    G -->|No| H["⚠️ Complete Required Fields"]
+    H --> D
+    G -->|Yes| I["✅ Completed State"]
+    I --> J["Return to Dashboard"]
 
-# 🎨 Product Design
+🔗 Proof Submission
 
-The UI focuses on:
+The current UI supports two proof types:
 
-| Principle         | Implementation                            |
-| ----------------- | ----------------------------------------- |
-| 🎯 Clarity        | Clear information hierarchy               |
-| 📊 Feedback       | Progress bars, badges & completion states |
-| 🧩 Reusability    | Modular React components                  |
-| ⚡ Interaction     | Interactive controls and states           |
-| 🎨 Consistency    | Unified visual language                   |
-| 📱 Responsiveness | Responsive layouts                        |
+GitHub Proof
 
----
+Learners can provide:
 
-# 🛠️ Tech Stack
+GitHub repository URL
 
-### Frontend
+GitHub commit URL
 
-<p>
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black">
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white">
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white">
-</p>
+LinkedIn Proof
 
-### UI & Icons
+Learners can provide:
 
-<p>
-<img src="https://img.shields.io/badge/Lucide_React-F56565?style=flat-square">
-<img src="https://img.shields.io/badge/Responsive_UI-Enabled-success?style=flat-square">
-</p>
+LinkedIn post URL
 
-### Development
+The ProofCard component also provides a short "Verifying..." UI state before marking the submitted link as verified in the frontend state.
 
-<p>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white">
-</p>
+Important: the current version does not perform server-side GitHub or LinkedIn API verification. The verification interaction is currently frontend-only.
 
-### Deployment
+🏆 Achievement System
 
-<p>
-<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white">
-</p>
+The current mock data includes achievements such as:
 
----
+Achievement
 
-# 📁 Project Structure
+Description
 
-```text
-ABTalks/
+🔥 7 Day Streak
+
+Maintained 7 consecutive builds
+
+🏗️ 10 Builds
+
+Pushed 10 projects to GitHub
+
+📈 100% This Week
+
+Zero missed days in the current week
+
+🚀 First Week Complete
+
+Finished Days 1 through 7
+
+🎯 Halfway Hero
+
+Reach 30 completed days
+
+Achievements can appear as unlocked or locked states.
+
+📚 Challenge Resources
+
+The challenge data supports external resources with:
+
+Resource title
+
+Description
+
+Type
+
+External URL
+
+Examples in the current data include:
+
+FastAPI Official Documentation
+
+RESTful API Design Standards
+
+ABTalks FastAPI Starter Template
+
+Resources open in a new browser tab.
+
+🧩 Reusable Components
+
+The project contains reusable UI components including:
+
+src/Components/
+│
+├── AchievementCard.jsx
+├── Badge.jsx
+├── BottomNav.jsx
+├── Button.jsx
+├── Card.jsx
+├── Checklist.jsx
+├── Navbar.jsx
+├── ProgressBar.jsx
+├── ProofCard.jsx
+├── ResourceCard.jsx
+├── StreakCard.jsx
+└── TaskCard.jsx
+
+This component-based structure keeps common UI patterns reusable across the application.
+
+🛠️ Tech Stack
+
+Technology
+
+Usage
+
+⚛️ React 19
+
+Frontend UI
+
+🛣️ React Router 7
+
+Client-side routing
+
+⚡ Vite 8
+
+Development server and build tool
+
+🎨 Tailwind CSS 4
+
+Styling and responsive UI
+
+🧩 Lucide React
+
+Icons
+
+💾 Browser localStorage
+
+Profile persistence
+
+🐙 GitHub
+
+Source control
+
+▲ Vercel
+
+Deployment
+
+📁 Project Structure
+
+Ab_talks_ps1/
 │
 ├── public/
+│   ├── favicon.svg
+│   └── icons.svg
 │
 ├── src/
 │   │
 │   ├── Components/
+│   │   ├── AchievementCard.jsx
 │   │   ├── Badge.jsx
+│   │   ├── BottomNav.jsx
 │   │   ├── Button.jsx
 │   │   ├── Card.jsx
+│   │   ├── Checklist.jsx
+│   │   ├── Navbar.jsx
 │   │   ├── ProgressBar.jsx
 │   │   ├── ProofCard.jsx
-│   │   └── StreakCard.jsx
+│   │   ├── ResourceCard.jsx
+│   │   ├── StreakCard.jsx
+│   │   └── TaskCard.jsx
 │   │
-│   ├── Pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Journey.jsx
-│   │   ├── Profile.jsx
-│   │   └── ...
+│   ├── data/
+│   │   └── mockData.js
+│   │
+│   ├── pages/
+│   │   ├── LandingPage.jsx
+│   │   ├── DashboardPage.jsx
+│   │   └── ChallengeDayPage.jsx
 │   │
 │   ├── App.jsx
-│   ├── main.jsx
-│   └── ...
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
 │
+├── index.html
 ├── package.json
 ├── vite.config.js
+├── vercel.json
 └── README.md
-```
 
----
+🚀 Getting Started
 
-# 🚀 Getting Started
+1. Clone the repository
 
-### 1️⃣ Clone the repository
+git clone https://github.com/goelshreya3001-droid/Ab_talks_ps1.git
 
-```bash
-git clone <https://github.com/goelshreya3001-droid/Ab_talks_ps1>
-```
+2. Navigate into the project
 
-### 2️⃣ Navigate to the project
+cd Ab_talks_ps1
 
-```bash
-cd ABTalks
-```
+3. Install dependencies
 
-### 3️⃣ Install dependencies
-
-```bash
 npm install
-```
 
-### 4️⃣ Start development server
+4. Start the development server
 
-```bash
 npm run dev
-```
 
-### 5️⃣ Build for production
+5. Create a production build
 
-```bash
 npm run build
-```
 
----
+6. Preview the production build
 
-# 🌐 Deployment Architecture
+npm run preview
 
-ABTalks is deployed on **Vercel**.
+🌐 Deployment
 
-```mermaid
+The current application is deployed on Vercel.
+
 flowchart LR
+    DEV["👩‍💻 Developer"] --> CODE["💻 React + Vite Project"]
+    CODE --> GIT["🐙 GitHub Repository"]
+    GIT --> VERCEL["▲ Vercel"]
+    VERCEL --> LIVE["🌐 Live ABTalks"]
 
-    DEV["👩‍💻 Developer"]
+🔗 Live Demo
 
-    DEV --> LOCAL["💻 Local Development"]
+https://ab-talks-ps1.vercel.app/
 
-    LOCAL --> COMMIT["📦 Git Commit"]
+📦 GitHub Repository
 
-    COMMIT --> GITHUB["🐙 GitHub"]
+https://github.com/goelshreya3001-droid/Ab_talks_ps1
 
-    GITHUB --> VERCEL["▲ Vercel"]
+🔮 Future Scope
 
-    VERCEL --> BUILD["⚙️ Production Build"]
+The current application is frontend-focused. Possible future extensions include:
 
-    BUILD --> LIVE["🌐 Live ABTalks"]
+🔐 Real user authentication
 
-    LIVE --> USERS["👥 Learners"]
-```
+☁️ Cloud-based profile storage
 
----
+🗄️ Backend/database integration
 
-# 🔮 Future Roadmap
+🔍 Real GitHub API verification
 
-```mermaid
-flowchart LR
+🔗 Real LinkedIn verification/integration
 
-    A["Current Platform"]
+📊 Persistent challenge completion history
 
-    B["🔐 Authentication"]
+🏆 Dynamic achievement unlocking
 
-    C["☁️ Cloud Persistence"]
+🔔 Challenge reminders
 
-    D["🗄️ Backend Database"]
+👥 Community and leaderboard features
 
-    E["🤖 AI Learning Assistant"]
+These are future possibilities, not current implemented features.
 
-    F["🔗 Automated GitHub Verification"]
+🎯 Product Vision
 
-    G["📊 Advanced Analytics"]
+ABTalks is designed around a simple idea:
 
-    H["🏆 Leaderboards"]
+       BUILD
+         ↓
+      DOCUMENT
+         ↓
+       PROVE
+         ↓
+      PROGRESS
+         ↓
+       REPEAT
 
-    I["👥 Community Learning"]
+The long-term goal is to make consistent coding practice easier to follow, easier to document, and easier to demonstrate.
 
-    A --> B --> C --> D --> E --> F --> G --> H --> I
-```
+👩‍💻 Author
 
-### 🚧 Planned Enhancements
+Shreya Goel
 
-* [ ] 🔐 Authentication
-* [ ] ☁️ Cloud profile persistence
-* [ ] 🗄️ Backend database
-* [ ] 🤖 AI learning assistant
-* [ ] 🔗 Automated GitHub verification
-* [ ] 📊 Advanced analytics
-* [ ] 🏆 Leaderboards
-* [ ] 🏅 Certificates
-* [ ] 🔔 Notifications
-* [ ] 👥 Community learning
-
----
-
-# 💡 Product Vision
-
-ABTalks aims to evolve from a learning tracker into a complete **AI Engineering Learning OS**.
-
-```mermaid
-flowchart TD
-
-    LEARN["📚 Learn"]
-
-    BUILD["💻 Build"]
-
-    PROVE["🔗 Prove"]
-
-    TRACK["📊 Track"]
-
-    IMPROVE["🧠 Improve"]
-
-    ACHIEVE["🏆 Achieve"]
-
-    LEARN --> BUILD
-    BUILD --> PROVE
-    PROVE --> TRACK
-    TRACK --> IMPROVE
-    IMPROVE --> LEARN
-
-    ACHIEVE --> LEARN
-```
-
-> **Learning should not end with consuming content.
-> It should end with something you can build, prove, and show.**
-
----
-
-# 👩‍💻 Author
-
-## Shreya Goel
-
-**B.Tech CSE — ABES Engineering College**
-
-<p>
-<a href="https://github.com/goelshreya3001-droid">
-<img src="https://img.shields.io/badge/GitHub-Shreya%20Goel-181717?style=for-the-badge&logo=github">
-</a>
-</p>
-
----
-
-# 🌐 Live Project
+B.Tech CSE — ABES Engineering College
 
 <p align="center">
-
-<a href="https://ab-talks-ps1.vercel.app/">
-
-<img src="https://img.shields.io/badge/🚀%20OPEN%20ABTALKS-LIVE%20DEMO-6366F1?style=for-the-badge">
-
-</a>
-
+  <a href="https://github.com/goelshreya3001-droid">
+    <img src="https://img.shields.io/badge/GitHub-Shreya%20Goel-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  </a>
 </p>
 
----
+<p align="center">
+  <a href="https://ab-talks-ps1.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀%20TRY%20ABTALKS-LIVE%20DEMO-10B981?style=for-the-badge" alt="Try ABTalks" />
+  </a>
+</p>
 
 <p align="center">
-
-### ⭐ If you like the project, consider giving it a star!
-
-**ABTalks**
-
-### Learn → Build → Prove → Progress 🚀
-
+  <strong>Build code daily. Prove your consistency. 🚀</strong>
 </p>
