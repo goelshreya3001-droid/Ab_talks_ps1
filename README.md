@@ -454,7 +454,7 @@ ABTalks/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/goelshreya3001-droid/Ab_talks_ps1>
 ```
 
 ### 2️⃣ Navigate to the project
